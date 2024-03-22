@@ -95,6 +95,12 @@ $balloon: #333;
 $border-up-down: #303030;
 $bottom: rgba(255, 255, 255, .4);
 
+//variables
+$border-top: 1px solid;
+$trans: 0.35s ease-in-out;
+$rowpad: 50px 0 0 50px;
+$lipad: 2em 0em 1.25em 0em;
+
 body{
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
@@ -192,7 +198,7 @@ body{
   // row styling //
   .row{
       [class*='column-'] {
-          padding: 50px 0 0 50px;
+          padding: $rowpad;
           float: left;
           box-sizing: border-box;
         }
@@ -245,8 +251,8 @@ body{
           list-style: none;
           li {
               display: block;
-              padding: 2em 0em 1.25em 0em;
-              border-top: 1px solid $border-up-down;
+              padding: $lipad;
+              border-top: $border-top $border-up-down;
             }
           a {
               text-decoration: none;
@@ -265,7 +271,7 @@ body{
           list-style: none;
           li {
               padding: 0.60em 0em;
-              border-top: 1px solid;
+              border-top: $border-top;
               border-color: $border;
             }
         }
@@ -278,7 +284,7 @@ body{
           list-style: none;
           li {
               padding: 1.90em 0em 1.60em 0em;
-              border-top: 1px solid;
+              border-top: $border-top;
               border-color: $border;
             }
           img {
@@ -310,7 +316,7 @@ body{
       text-transform: uppercase;
       font-size: 1.1em;
       color: $secondary;
-      transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
+      transition: color $trans, background-color $trans;
       cursor: pointer;
       &:hover {
           background: $primary;
@@ -348,7 +354,7 @@ body{
       background: $secondary;
     }
   .main {
-      border-top: 1px solid;
+      border-top: $border-top;
       border-color: rgba(0, 0, 0, .2);
     }
   .sidebar{
@@ -370,7 +376,7 @@ body{
   .copyright {
       position: relative;
       padding: 3em 0em;
-      border-top: 1px solid $border-up-down;
+      border-top: $border-top $border-up-down;
       letter-spacing: 1px;
       text-align: center;
       color: $bottom;
@@ -390,7 +396,7 @@ body{
   .featured {
       position: relative;
       .divider {
-          border-bottom: 1px solid $border-up-down;
+          border-bottom: $border-top $border-up-down;
         }
       .box {
           background: $secondary;
